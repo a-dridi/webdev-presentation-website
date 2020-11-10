@@ -1,0 +1,332 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* FEATURED CONTAINER - TYPING TEXT - SCROLL BUTTON */
+
+@keyframes cursorblink {
+    0% {
+        background-color: rgb(80, 79, 79);
+    }
+    49% {
+        background-color: rgb(80, 79, 79);
+    }
+    50% {
+        background-color: transparent;
+    }
+    99% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: rgb(80, 79, 79);
+    }
+}
+
+.featured-container {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 5px;
+    background: rgba(234, 246, 248, 0.75);
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.featured-container::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: url("../img/featured_bg.PNG") no-repeat center center/cover;
+    background-attachment: fixed;
+}
+
+.typing-text {
+    font-weight: bold;
+    color: #e67316;
+}
+
+.cursor {
+    display: inline-block;
+    background-color: black;
+    margin-left: 0.1rem;
+    width: 3px;
+    animation: cursorblink 1s infinite;
+}
+
+.container p span.cursor.typing {
+    animation: none;
+}
+
+.website-title {
+    font-size: 35px;
+    margin-bottom: 100px;
+}
+
+.scroll-button a {
+    position: absolute;
+    bottom: 90px;
+    left: 45%;
+    z-index: 2;
+    display: block;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    color: black;
+    letter-spacing: .1em;
+    text-decoration: none;
+    transition: opacity .3s;
+}
+
+.scroll-button a:hover {
+    opacity: .5;
+}
+
+#see-more-button a {
+    padding-top: 15px;
+}
+
+#see-more-button a span {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    box-sizing: border-box;
+    top: -50px;
+    left: 50%;
+    border: 1px solid #bd5e11;
+    border-radius: 100%;
+}
+
+#see-more-button a span::after {
+    content: '';
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    box-sizing: border-box;
+    top: 0%;
+    left: 45%;
+    margin: 12px 0 0 -8px;
+    border-left: 1px solid #bd5e11;
+    border-bottom: 1px solid #bd5e11;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+#see-more-button a span::before {
+    content: '';
+    height: 45px;
+    width: 45px;
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 0 0 #bd5e11;
+    border-radius: 100%;
+    opacity: 0;
+    animation: seemorebuttoncircle 3200ms infinite;
+    -webkit-animation: seemorebuttoncircle 3200ms infinite;
+}
+
+.scroll-button-text {
+    margin-left: 45px;
+}
+
+@keyframes seemorebuttoncircle {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    60% {
+        box-shadow: 0 0 0 60px rgba(255, 255, 255, .15);
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes seemorebuttoncircle {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    60% {
+        box-shadow: 0 0 0 60px rgba(255, 255, 255, .15);
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* FEATURED CONTAINER - TYPING TEXT END */
+
+/* Projects */
+
+#projects {
+    margin: 15px 0 0 0;
+}
+
+.project {
+    padding-left: 20%;
+    padding-right: 20%;
+    margin: auto;
+    padding-top: 75px;
+    padding-bottom: 75px;
+}
+
+.project:nth-of-type(even) {
+    background: rgb(238, 238, 238);
+}
+
+.project-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@media(max-width:1200px) {
+    .project-content {
+        flex-wrap: wrap;
+    }
+}
+
+.project-title {
+    padding-left: 10px;
+    margin-bottom: 10px;
+    border-left: 5px solid #bd5e11;
+    font-size: 25px;
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    max-width: 1100px;
+    object-fit: cover;
+    margin-bottom: 25px;
+}
+
+.project-left-image {
+    margin-right: 45px;
+}
+
+.project-description {
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+.open-project-button {
+    border: none;
+    padding: 15px;
+    min-width: 50px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+    background: rgb(177, 123, 56);
+    background: linear-gradient(90deg, rgba(177, 123, 56, 1) 0%, rgba(212, 77, 11, 1) 79%);
+    box-shadow: 10px 10px 46px -18px rgba(0, 0, 0, 0.45);
+    -webkit-box-shadow: 10px 10px 46px -18px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 10px 10px 46px -18px rgba(0, 0, 0, 0.45);
+}
+
+
+
+
+.open-project-button:hover {
+    color: black;
+    transition: all 0.4s ease-in-out;
+    background: rgb(215, 208, 201);
+    background: linear-gradient(90deg, rgba(215, 208, 201, 1) 0%, rgba(250, 226, 213, 1) 69%);
+}
+
+.button-text {
+    padding-left: 5px;
+}
+
+/* Projects END */
+
+/* Footer */
+
+.footer {
+    padding: 50px 50px 0 50px;
+    background: #ffd0aa;
+}
+
+.footer-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    padding-bottom: 50px;
+}
+
+@media(max-width: 850px) {
+    .footer-row {
+        flex-wrap: wrap;
+    }
+}
+
+.footer-about {
+    margin-bottom: 35px;
+}
+
+.footer-row>div {
+    margin-right: 20px;
+}
+
+.footer-left-center {
+    justify-self: center;
+}
+
+.normal-link-button {
+    border: none;
+    padding: 10px;
+    min-width: 40px;
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    background: rgb(177, 123, 56);
+    background: linear-gradient(90deg, rgba(177, 123, 56, 1) 0%, rgba(212, 77, 11, 1) 79%);
+    box-shadow: 10px 10px 46px -18px rgba(0, 0, 0, 0.45);
+    -webkit-box-shadow: 10px 10px 46px -18px rgba(0, 0, 0, 0.45);
+    -moz-box-shadow: 10px 10px 46px -18px rgba(0, 0, 0, 0.45);
+}
+
+.normal-link-button:hover {
+    color: black;
+    transition: all 0.4s ease-in-out;
+    background: rgb(215, 208, 201);
+    background: linear-gradient(90deg, rgba(215, 208, 201, 1) 0%, rgba(250, 226, 213, 1) 69%);
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    font-weight: bold;
+}
+
+/* Footer END */
