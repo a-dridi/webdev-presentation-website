@@ -7,4 +7,4 @@ This responsive website shows a few website projects.
 The website is programmed in HTML, CSS and Vanilla JS. 
 
 This website is hosted on:<br/>
-https://webdevelopment.ard.ovh
+https://dridi.at/webdesign
